@@ -6,10 +6,12 @@
     "strict": true,
     "lib": [
       "ES2022",
-      "DOM"
+      "DOM",
+      "DOM.Iterable"
     ],
     "types": [
-      "chrome"
+      "chrome",
+      "node"
     ],
     "noEmit": true
   },
