@@ -2,9 +2,12 @@
 body { margin: 0; }
 main { width: min(520px, calc(100vw - 40px)); margin: 32px auto; }
 h1 { font-size: 1.35rem; }
+h2 { margin-top: 28px; }
 form { display: grid; gap: 14px; }
 label { display: grid; gap: 5px; font-weight: 600; }
-input { padding: 10px 12px; border: 1px solid #bcc3d2; border-radius: 8px; font: inherit; }
-button { padding: 10px 14px; border: 0; border-radius: 8px; background: #3157d5; color: white; font-weight: 700; cursor: pointer; }
-button.secondary { background: #e5e9f5; color: #172033; margin-top: 8px; }
+input, textarea { padding: 10px 12px; border: 1px solid #bcc3d2; border-radius: 8px; font: inherit; }
+button { padding: 10px 14px; border: 0; border-radius: 8px; background: #3157d5; color: white; font-weight: 700; cursor: pointer; margin-top: 8px; }
+button.secondary { background: #e5e9f5; color: #172033; }
+button:disabled { opacity: .55; cursor: default; }
 output { min-height: 1.5em; color: #18734b; }
+hr { border: 0; border-top: 1px solid #d9deea; margin: 28px 0; }
