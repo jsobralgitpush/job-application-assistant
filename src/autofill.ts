@@ -67,7 +67,7 @@ export function fillApplication(root: Document | ShadowRoot, profile: ApplicantP
   for (const currentRoot of discoverRoots(root)) {
     const fields = currentRoot.querySelectorAll<Fillable>("input:not([type=hidden]):not([type=file]), textarea, select");
     for (const field of fields) {
-      if (field.disabled || field.readOnly || field.value.trim()) continue;
+      if (field.disabled || ("readOnly" in field && field.readOnly) || field.value.trim()) continue;
       const key = identifyField(field);
       const value = key ? profile[key] : "";
       if (!value) continue;
