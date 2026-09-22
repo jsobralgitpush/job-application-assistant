@@ -1,5 +1,5 @@
 import "./ui.css";
-import { getProfile, saveProfile, type ApplicantProfile } from "./profile";
+import { getProfile, PROFILE_FIELDS, saveProfile, type ApplicantProfile } from "./profile";
 
 const form = document.querySelector<HTMLFormElement>("#profile-form");
 const status = document.querySelector<HTMLOutputElement>("#status");
@@ -16,7 +16,7 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = new FormData(form);
   const profile = Object.fromEntries(
-    ["fullName", "email", "phone", "location", "linkedIn", "website"].map((key) => [key, String(data.get(key) ?? "").trim()]),
+    PROFILE_FIELDS.map((key) => [key, String(data.get(key) ?? "").trim()]),
   ) as unknown as ApplicantProfile;
   await saveProfile(profile);
   status.value = "Saved.";
