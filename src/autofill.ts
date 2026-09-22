@@ -58,7 +58,7 @@ export function fillApplication(root: ParentNode, profile: ApplicantProfile): nu
   const fields = root.querySelectorAll<Fillable>("input:not([type=hidden]):not([type=file]), textarea, select");
   let filled = 0;
   for (const field of fields) {
-    if (field.disabled || field.readOnly || field.value.trim()) continue;
+    if (field.disabled || ("readOnly" in field && field.readOnly) || field.value.trim()) continue;
     const key = identifyField(field);
     const value = key ? profile[key] : "";
     if (!value) continue;
