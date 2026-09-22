@@ -5,6 +5,11 @@ export interface ApplicantProfile {
   location: string;
   linkedIn: string;
   website: string;
+  currentCompany: string;
+  currentTitle: string;
+  yearsExperience: string;
+  salaryExpectation: string;
+  workAuthorization: string;
 }
 
 export const EMPTY_PROFILE: ApplicantProfile = {
@@ -14,8 +19,14 @@ export const EMPTY_PROFILE: ApplicantProfile = {
   location: "",
   linkedIn: "",
   website: "",
+  currentCompany: "",
+  currentTitle: "",
+  yearsExperience: "",
+  salaryExpectation: "",
+  workAuthorization: "",
 };
 
+export const PROFILE_FIELDS = Object.keys(EMPTY_PROFILE) as (keyof ApplicantProfile)[];
 const PROFILE_KEY = "applicantProfile";
 
 export async function getProfile(): Promise<ApplicantProfile> {
