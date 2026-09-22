@@ -16,9 +16,18 @@
       <label>Current title<input name="currentTitle"></label>
       <label>Years of experience<input name="yearsExperience" inputmode="numeric"></label>
       <label>Salary expectation<input name="salaryExpectation"></label>
-      <label>Work authorization<input name="workAuthorization" placeholder="e.g. Authorized to work in Brazil"></label>
+      <label>Work authorization<input name="workAuthorization"></label>
       <button type="submit">Save profile</button>
       <output id="status" aria-live="polite"></output>
+    </form>
+    <hr>
+    <h2>Optional AI answers</h2>
+    <p>The API key is kept only for the current browser session. Candidate context remains local.</p>
+    <form id="ai-form">
+      <label>OpenAI API key<input name="apiKey" type="password" autocomplete="off" placeholder="sk-..."></label>
+      <label>Career context<textarea name="careerContext" rows="10" placeholder="Summarize your experience, skills, preferred roles and truthful constraints."></textarea></label>
+      <button type="submit">Save AI settings</button>
+      <output id="ai-status" aria-live="polite"></output>
     </form>
   </main>
   <script type="module" src="/src/options.ts"></script>
